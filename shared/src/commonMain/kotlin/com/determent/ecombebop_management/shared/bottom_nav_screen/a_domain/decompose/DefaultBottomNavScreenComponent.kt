@@ -1,7 +1,9 @@
 package com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose
 
-class DefaultBottomNavScreenComponent(
+import com.arkivanov.decompose.ComponentContext
 
-): BottomNavScreenComponent {
+class DefaultBottomNavScreenComponent(
+    componentContext: ComponentContext
+) : BottomNavScreenComponent, ComponentContext by componentContext {
 
 }

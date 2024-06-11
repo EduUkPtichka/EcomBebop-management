@@ -1,4 +1,4 @@
-package com.determent.ecombebop_management.shared.core_coil
+package com.determent.ecombebop_management.shared.a_root.root_coil
 
 import coil3.ImageLoader
 import coil3.PlatformContext

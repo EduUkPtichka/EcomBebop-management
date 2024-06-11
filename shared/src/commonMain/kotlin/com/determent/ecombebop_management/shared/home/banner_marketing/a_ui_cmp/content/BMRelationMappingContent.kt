@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import coil3.annotation.ExperimentalCoilApi
 import coil3.compose.AsyncImage
 import coil3.compose.setSingletonImageLoaderFactory
-import com.determent.ecombebop_management.shared.core_coil.getAsyncImageLoader
+import com.determent.ecombebop_management.shared.a_root.root_coil.getAsyncImageLoader
 
 @OptIn(ExperimentalCoilApi::class)
 @Composable
