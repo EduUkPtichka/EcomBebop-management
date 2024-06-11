@@ -1,14 +1,18 @@
 package preview.banner_marketing
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.determent.ecombebop_management.shared.home.banner_marketing.a_model.BMRelationMappingContent
+import androidx.compose.ui.unit.dp
+import com.determent.ecombebop_management.shared.home.banner_marketing.a_model.BMRelationMappingContentModel
 import com.determent.ecombebop_management.shared.home.banner_marketing.a_ui_cmp.BannerMarketingPager
 import com.determent.ecombebop_management.shared.home.banner_marketing.a_ui_cmp.content.BMContentManagement
-import com.determent.ecombebop_management.shared.home.banner_marketing.a_ui_cmp.content.BMRelationMappingContent
 import dev.icerock.moko.resources.compose.painterResource
 import org.example.library.MR
 
@@ -16,33 +20,35 @@ import org.example.library.MR
 @Composable
 private fun PreviewBannerMarketingPager() {
 
-    val images by remember {
-        mutableStateOf(
-            listOf(
-                BMRelationMappingContent(
-                    ""
-                ),
-                BMRelationMappingContent(
-                    "https://batnorton.com/img/about4.webp"
-                ),
-            )
+    val images = listOf(
+        BMRelationMappingContentModel(
+            "https://batnorton.com/img/about4.webp"
+        ),
+        BMRelationMappingContentModel(
+            "https://batnorton.com/img/about4.webp"
+        ),
+        BMRelationMappingContentModel(
+            "https://batnorton.com/img/about4.webp"
+        ),
+    )
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White)
+    ) {
+        BannerMarketingPager(
+            images = images,
+            contentManagement = {
+                BMContentManagement(
+                    onClick = { },
+                    icon = painterResource(imageResource = MR.images.svg_plus)
+                )
+            },
+            modifier = Modifier
+                .height(200.dp)
+                .fillMaxWidth()
+
         )
     }
-
-    BannerMarketingPager(
-        images = images,
-        contentManagement = {
-            BMContentManagement(
-                onClick = { },
-                icon = painterResource(imageResource = MR.images.svg_plus)
-            )
-        },
-        relationMappingContent = {
-            BMRelationMappingContent(
-                onClick = {},
-                imageUrl = images[it]
-            )
-        }
-
-    )
 }

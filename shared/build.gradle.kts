@@ -53,11 +53,9 @@ kotlin {
 }
 
 dependencies {
-
     // Compose multiplatform
     commonMainImplementation(libs.jetbrains.composeRuntime)
     commonMainImplementation(libs.jetbrains.composeFoundation)
-    commonMainImplementation(libs.jetbrains.composeMaterial3)
     commonMainImplementation(libs.jetbrains.composeMaterial)
     commonMainImplementation(libs.jetbrains.composeUi)
 
@@ -70,7 +68,7 @@ dependencies {
     commonMainImplementation(libs.coil.mp)
 
     // Jetbrains
-    commonMainImplementation(libs.jetbrains.kotlinx.coroutines.core)
+    commonMainApi(libs.jetbrains.kotlinx.coroutines.core)
 
     commonMainImplementation(libs.jetbrains.kotlinxCollectionsImmutable)
     commonMainImplementation(libs.jetbrains.kotlinx.serialization.json)
@@ -97,8 +95,21 @@ dependencies {
 
     /* ----------------- AndroidMain ----------------- */
 
+    // Android
     "androidMainImplementation"(libs.android.composeUiToolingPreview)
-    "androidMainImplementation"(libs.ktor.client.okhttp)
+    "androidMainApi"(libs.androidx.camera.camera2)
+    "androidMainApi"(libs.androidx.camera.core)
+    "androidMainApi"(libs.androidx.camera.lifecycle)
+    "androidMainApi"(libs.androidx.camera.view)
+    "androidMainApi"(libs.androidx.camera.extensions)
+    "androidMainApi"(libs.androidx.lifecycleRuntimeKtx)
+    "androidMainApi"(libs.androidx.lifecycleViewModelCompose)
+
+    "androidMainApi"(libs.accompanist.permissions)
+
+    // Jetbrains
+    "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.android)
+    "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.core)
 
 }
 
