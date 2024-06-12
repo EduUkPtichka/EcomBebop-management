@@ -12,9 +12,9 @@ import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.deco
 
 interface RootComponent {
 
-    val rootStack: Value<ChildStack<*, RootChild>>
+    val childRootStack: Value<ChildStack<*, ChildRoot>>
 
-    sealed class RootChild {
-        class BottomNavScreen(val component: BottomNavScreenComponent) : RootChild()
+    sealed class ChildRoot {
+        class BottomNavScreenChildRoot(val component: BottomNavScreenComponent) : ChildRoot()
     }
 }

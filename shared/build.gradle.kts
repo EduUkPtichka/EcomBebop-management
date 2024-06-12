@@ -30,7 +30,6 @@ kotlin {
         podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "shared"
-            //isStatic = true
 
             export(libs.arkivanov.decompose)
             export(libs.arkivanov.essenty.lifecycle)
@@ -39,9 +38,6 @@ kotlin {
             export(libs.moko.resources)
             export(libs.moko.graphics)
 
-
-            //xcodeConfigurationToNativeBuildType["CUSTOM_DEBUG"] = NativeBuildType.DEBUG
-            //xcodeConfigurationToNativeBuildType["CUSTOM_RELEASE"] = NativeBuildType.RELEASE
         }
     }
 

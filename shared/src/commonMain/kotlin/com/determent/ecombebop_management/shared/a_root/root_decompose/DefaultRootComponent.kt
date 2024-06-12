@@ -5,7 +5,7 @@ import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
-import com.determent.ecombebop_management.shared.a_root.root_decompose.DefaultRootComponent.RootConfig.BottomNavScreenRootConfig
+import com.determent.ecombebop_management.shared.a_root.root_decompose.DefaultRootComponent.ConfigRoot.ConfigRootBottomNavScreen
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.BottomNavScreenComponent
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.DefaultBottomNavScreenComponent
 import kotlinx.serialization.Serializable
@@ -26,7 +26,7 @@ class DefaultRootComponent(
     componentContext: ComponentContext
 ) : RootComponent, ComponentContext by componentContext {
 
-    private val rootNavigation: StackNavigation<RootConfig> = StackNavigation<RootConfig>()
+    private val rootNavigation: StackNavigation<ConfigRoot> = StackNavigation()
 
     /*
      * Интересное поведение компилятора при указании полного объема типов:
@@ -35,28 +35,29 @@ class DefaultRootComponent(
      * true:  val rootStack: Value<ChildStack<*, RootComponent.RootChild>>
      *             get() = _rootStack
      */
-    override val rootStack: Value<ChildStack<*, RootComponent.RootChild>>
-        get() = this._rootStack
+    override val childRootStack: Value<ChildStack<*, RootComponent.ChildRoot>>
+        get() = this._childRootStack
 
-    private val _rootStack: Value<ChildStack<*, RootComponent.RootChild>> = childStack(
-        source = rootNavigation,
-        serializer = RootConfig.serializer(),
-        initialConfiguration = BottomNavScreenRootConfig,
-        key = "DefaultRootComponent",
-        handleBackButton = true,
-        childFactory = ::rootChildFactory,
-    )
+    private val _childRootStack: Value<ChildStack<*, RootComponent.ChildRoot>> =
+        childStack(
+            source = rootNavigation,
+            serializer = ConfigRoot.serializer(),
+            initialConfiguration = ConfigRootBottomNavScreen,
+            key = "DefaultRootComponent",
+            handleBackButton = true,
+            childFactory = ::childFactoryRoot,
+        )
 
     init {
 
     }
 
-    private fun rootChildFactory(
-        config: RootConfig,
+    private fun childFactoryRoot(
+        config: ConfigRoot,
         componentContext: ComponentContext
-    ): RootComponent.RootChild {
+    ): RootComponent.ChildRoot {
         return when (config) {
-            is BottomNavScreenRootConfig -> RootComponent.RootChild.BottomNavScreen(
+            is ConfigRootBottomNavScreen -> RootComponent.ChildRoot.BottomNavScreenChildRoot(
                 component = bottomNavScreenComponent(componentContext)
             )
         }
@@ -68,9 +69,9 @@ class DefaultRootComponent(
 
 
     @Serializable
-    private sealed interface RootConfig {
+    private sealed interface ConfigRoot {
         @Serializable
-        data object BottomNavScreenRootConfig : RootConfig
+        data object ConfigRootBottomNavScreen : ConfigRoot
 
     }
 }
