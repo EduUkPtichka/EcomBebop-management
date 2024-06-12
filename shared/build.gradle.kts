@@ -49,21 +49,25 @@ kotlin {
 }
 
 dependencies {
-    // Compose multiplatform
+    /* ------- Compose multiplatform -------  */
+    // Compose Multiplatform
     commonMainImplementation(libs.jetbrains.composeRuntime)
     commonMainImplementation(libs.jetbrains.composeFoundation)
     commonMainImplementation(libs.jetbrains.composeMaterial)
     commonMainImplementation(libs.jetbrains.composeUi)
 
-    // Compose Lib
+    /* ------------ Compose Lib Multiplatform ------------  */
+    // Haze
     commonMainImplementation(libs.chrisbanes.hazeJetpackCompose)
     commonMainImplementation(libs.chrisbanes.hazeMaterials)
+    // Coil
     commonMainImplementation(libs.coil.compose)
     commonMainImplementation(libs.coil.compose.core)
     commonMainImplementation(libs.coil.network.ktor)
     commonMainImplementation(libs.coil.mp)
 
-    // Jetbrains
+    /* ------------- Jetbrains ------------  */
+    // Coroutines
     commonMainApi(libs.jetbrains.kotlinx.coroutines.core)
 
     commonMainImplementation(libs.jetbrains.kotlinxCollectionsImmutable)
@@ -72,6 +76,7 @@ dependencies {
     // Jetbrains Ktor-Client
     commonMainImplementation(libs.ktor.client.core)
 
+    /* ------------- Arkivanov ------------ */
     // Decompose
     commonMainApi(libs.arkivanov.decompose)
     commonMainApi(libs.arkivanov.decompose.extensionsCompose)
@@ -83,29 +88,40 @@ dependencies {
     commonMainApi(libs.arkivanov.mvikotlinLogger)
     commonMainApi(libs.arkivanov.mvikotlinTimetravel)
 
+    // Kodein (DI)
     commonMainImplementation(libs.kodein.di)
 
-    // Moko
+    /* --------- Инфраструктурные -------- */
+    // Touchlab
+    commonMainImplementation(libs.touchlab.skie.configurationAnnotations)
+
+    // Mako
     commonMainApi(libs.moko.resources)
     commonMainApi(libs.moko.resourcesCompose)
 
-    /* ----------------- AndroidMain ----------------- */
+    /* --------------------- AndroidMain --------------------- */
 
-    // Android
-    "androidMainImplementation"(libs.android.composeUiToolingPreview)
+    /* ------------ Compose Lib Android ------------  */
+    // Camera
     "androidMainApi"(libs.androidx.camera.camera2)
     "androidMainApi"(libs.androidx.camera.core)
     "androidMainApi"(libs.androidx.camera.lifecycle)
     "androidMainApi"(libs.androidx.camera.view)
     "androidMainApi"(libs.androidx.camera.extensions)
     "androidMainApi"(libs.androidx.lifecycleRuntimeKtx)
+    // ViewModel
     "androidMainApi"(libs.androidx.lifecycleViewModelCompose)
-
+    // Permissions
     "androidMainApi"(libs.accompanist.permissions)
 
-    // Jetbrains
-    "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.android)
+    /* ------------- Jetbrains ------------  */
+    // Coroutines
     "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.core)
+    "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.android)
+
+
+
+    "androidMainImplementation"(libs.android.composeUiToolingPreview)
 
 }
 

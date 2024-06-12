@@ -3,24 +3,40 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
+		0D64FA092C19AB1500D2C942 /* RootViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA082C19AB1500D2C942 /* RootViewScreen.swift */; };
+		0D64FA0B2C19AD9100D2C942 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA0A2C19AD9100D2C942 /* StackView.swift */; };
+		0D64FA0F2C19AF1300D2C942 /* StateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA0E2C19AF1300D2C942 /* StateValue.swift */; };
+		0D64FA112C19AF5E00D2C942 /* SimpleChildStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA102C19AF5E00D2C942 /* SimpleChildStack.swift */; };
+		0D64FA132C19AF8100D2C942 /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA122C19AF8100D2C942 /* ObservableValue.swift */; };
+		0D64FA152C19AF9B00D2C942 /* MutableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA142C19AF9B00D2C942 /* MutableValue.swift */; };
+		0D64FA182C19BAF700D2C942 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA172C19BAF700D2C942 /* AppDelegate.swift */; };
+		0D64FA1A2C19BBD700D2C942 /* RootHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA192C19BBD700D2C942 /* RootHolder.swift */; };
+		0D64FA1C2C19BC5D00D2C942 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA1B2C19BC5D00D2C942 /* RootView.swift */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
-		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		780EB2AB8BD546E495DF3C4D /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8E9826F5BBCEED7D56D5D3 /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0D64FA082C19AB1500D2C942 /* RootViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewScreen.swift; sourceTree = "<group>"; };
+		0D64FA0A2C19AD9100D2C942 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		0D64FA0E2C19AF1300D2C942 /* StateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValue.swift; sourceTree = "<group>"; };
+		0D64FA102C19AF5E00D2C942 /* SimpleChildStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleChildStack.swift; sourceTree = "<group>"; };
+		0D64FA122C19AF8100D2C942 /* ObservableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableValue.swift; sourceTree = "<group>"; };
+		0D64FA142C19AF9B00D2C942 /* MutableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableValue.swift; sourceTree = "<group>"; };
+		0D64FA172C19BAF700D2C942 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0D64FA192C19BBD700D2C942 /* RootHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHolder.swift; sourceTree = "<group>"; };
+		0D64FA1B2C19BC5D00D2C942 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		3C1D7480048FC1AC7E655EF6 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76CDE1F00109BBE08CEDCBDD /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DC8E9826F5BBCEED7D56D5D3 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,13 +62,36 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0D64FA072C19AAD200D2C942 /* root_decompose_ios */ = {
+			isa = PBXGroup;
+			children = (
+				0D64FA0C2C19AEF000D2C942 /* DecomposeHelpers */,
+				0D64FA082C19AB1500D2C942 /* RootViewScreen.swift */,
+				0D64FA172C19BAF700D2C942 /* AppDelegate.swift */,
+				0D64FA192C19BBD700D2C942 /* RootHolder.swift */,
+				0D64FA1B2C19BC5D00D2C942 /* RootView.swift */,
+			);
+			path = root_decompose_ios;
+			sourceTree = "<group>";
+		};
+		0D64FA0C2C19AEF000D2C942 /* DecomposeHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D64FA0A2C19AD9100D2C942 /* StackView.swift */,
+				0D64FA0E2C19AF1300D2C942 /* StateValue.swift */,
+				0D64FA102C19AF5E00D2C942 /* SimpleChildStack.swift */,
+				0D64FA122C19AF8100D2C942 /* ObservableValue.swift */,
+				0D64FA142C19AF9B00D2C942 /* MutableValue.swift */,
+			);
+			path = DecomposeHelpers;
+			sourceTree = "<group>";
+		};
 		6C96245A15445A3E18F7897E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				76CDE1F00109BBE08CEDCBDD /* Pods-iosApp.debug.xcconfig */,
 				3C1D7480048FC1AC7E655EF6 /* Pods-iosApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,8 +116,8 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				0D64FA072C19AAD200D2C942 /* root_decompose_ios */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
-				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
@@ -106,6 +145,7 @@
 				7555FF79242A565900829871 /* Resources */,
 				8A69E0A8A9BFC6CB835F02A3 /* Frameworks */,
 				7E19636F5587192E45333124 /* [CP] Embed Pods Frameworks */,
+				967157811B5E6197526FE642 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,6 +241,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		967157811B5E6197526FE642 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -208,8 +265,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D64FA182C19BAF700D2C942 /* AppDelegate.swift in Sources */,
+				0D64FA092C19AB1500D2C942 /* RootViewScreen.swift in Sources */,
+				0D64FA0F2C19AF1300D2C942 /* StateValue.swift in Sources */,
+				0D64FA132C19AF8100D2C942 /* ObservableValue.swift in Sources */,
+				0D64FA1C2C19BC5D00D2C942 /* RootView.swift in Sources */,
+				0D64FA152C19AF9B00D2C942 /* MutableValue.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
-				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				0D64FA112C19AF5E00D2C942 /* SimpleChildStack.swift in Sources */,
+				0D64FA0B2C19AD9100D2C942 /* StackView.swift in Sources */,
+				0D64FA1A2C19BBD700D2C942 /* RootHolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = FRJ7F29KB6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iosApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -346,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.determent.ecombebopmanagement.iosApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,6 +426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = FRJ7F29KB6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iosApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -367,7 +434,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.determent.ecombebopmanagement.iosApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

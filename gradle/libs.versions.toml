@@ -90,7 +90,8 @@ jetbrains-composeMaterial3 = { module = "org.jetbrains.compose.material3:materia
 jetbrains-composeFoundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "jetbrains-composeV" }
 jetbrains-composeUi = { module = "org.jetbrains.compose.ui:ui", version.ref = "jetbrains-composeV" }
 
-# Compose Lib
+# -------- Compose Lib --------
+# Haze
 chrisbanes-hazeJetpackCompose = { module = "dev.chrisbanes.haze:haze-jetpack-compose", version.ref = "hazeJetpackCmposeV" }
 chrisbanes-hazeMaterials = { module = "dev.chrisbanes.haze:haze-materials", version.ref = "hazeJetpackCmposeV" }
 
@@ -110,9 +111,9 @@ jetbrains-kotlinxCollectionsImmutable = { module = "org.jetbrains.kotlinx:kotlin
 
 # Jetbrains Coroutines
 jetbrains-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
-jetbrains-kotlinx-coroutines-core-js = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-js", version.ref = "kotlinxCoroutinesCore" }
 jetbrains-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesCore" }
 jetbrains-kotlinx-coroutines-core-iosx64 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-iosx64", version.ref = "kotlinxCoroutinesCore" }
+jetbrains-kotlinx-coroutines-core-js = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-js", version.ref = "kotlinxCoroutinesCore" }
 
 # Jetbrains Ktor-Client
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor-client" }
