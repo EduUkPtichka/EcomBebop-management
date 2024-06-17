@@ -12,4 +12,3 @@ fun rootViewController(root: RootComponent): UIViewController =
             modifier = Modifier.fillMaxSize()
         )
     }
-
