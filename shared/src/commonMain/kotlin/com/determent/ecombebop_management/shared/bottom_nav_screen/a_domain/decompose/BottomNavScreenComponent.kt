@@ -1,6 +1,7 @@
 package com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.painter.Painter
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.value.Value
@@ -14,7 +15,6 @@ interface BottomNavScreenComponent {
     val childStackBottomNavScreen: Value<ChildStack<*, ChildBottomNavScreen>>
 
     val model: StateFlow<List<BottomNavScreenModel>>
-
     fun onHomeClicked()
     fun onCatalogClicked()
     fun onMessengerClicked()

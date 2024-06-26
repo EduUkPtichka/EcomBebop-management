@@ -9,21 +9,47 @@ import com.arkivanov.decompose.defaultComponentContext
 import com.determent.ecombebop_management.shared.a_root.root_decompose.DefaultRootComponent
 import com.determent.ecombebop_management.shared.a_root.root_decompose.RootContentScreen
 
-class MainActivity : ComponentActivity() {
+//class MainActivity : ComponentActivity() {
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//
+//        val rootDecompose = DefaultRootComponent(
+//            componentContext = defaultComponentContext(),
+//        )
+//
+//        setContent {
+//            RootContentScreen(
+//                component = rootDecompose,
+//                modifier = Modifier.fillMaxSize()
+//            )
+//        }
+//    }
+//}
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-        val rootDecompose = DefaultRootComponent(
-            componentContext = defaultComponentContext(),
-        )
+class  Decrement(){
 
-        setContent {
-            RootContentScreen(
-                component = rootDecompose,
-                modifier = Modifier.fillMaxSize()
-            )
-        }
+    var stack1: Int? = 1
+
+
+    fun DeleteStackAndHeep(){
+        this.stack1 = null
     }
+
 }
+
+fun main() {
+    val stack1 = Decrement()
+    println(stack1.stack1)
+    stack1.DeleteStackAndHeep()
+    println(stack1.stack1)
+}
+
+
+
+
+
+
+
 

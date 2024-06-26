@@ -6,6 +6,8 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.arkivanov.decompose.extensions.compose.stack.Children
@@ -27,6 +29,11 @@ fun BottomNavContentScreen(
     component: BottomNavScreenComponent,
     modifier: Modifier = Modifier
 ) {
+
+    val a by remember {
+        mutableStateOf(component.model)
+    }
+
     val model by component.model.collectAsState()
 
     Scaffold(
@@ -46,7 +53,8 @@ fun BottomNavContentScreen(
                     component = childStackBottomNavScreen.component,
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(Color.Blue)
+                        .background(Color.Blue),
+                    listProductContent = {}
                 )
 
                 is BottomNavScreenComponent.ChildBottomNavScreen.CatalogChildBottomNavScreen -> CatalogContentScreen(
