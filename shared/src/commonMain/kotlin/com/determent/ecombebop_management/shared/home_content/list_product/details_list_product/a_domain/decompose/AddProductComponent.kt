@@ -1,7 +1,6 @@
-package com.determent.ecombebop_management.shared.home_content.details_list_product.a_domain.decompose
+package com.determent.ecombebop_management.shared.home_content.list_product.details_list_product.a_domain.decompose
 
 interface AddProductComponent {
-
 
     data class AddProductItem(
         val mainImage: Byte,
@@ -10,6 +9,5 @@ interface AddProductComponent {
         val title: String,
         val brand: String
     )
-
 
 }

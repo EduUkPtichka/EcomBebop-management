@@ -5,6 +5,7 @@ import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
+import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.determent.ecombebop_management.shared.a_root.root_decompose.DefaultRootComponent.ConfigRoot.ConfigRootBottomNavScreen
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.BottomNavScreenComponent
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.DefaultBottomNavScreenComponent
@@ -23,8 +24,22 @@ import kotlinx.serialization.Serializable
  */
 
 class DefaultRootComponent(
-    componentContext: ComponentContext
+    componentContext: ComponentContext,
+    private val bottomNavScreenComponentLambda: (ComponentContext) -> DefaultBottomNavScreenComponent,
 ) : RootComponent, ComponentContext by componentContext {
+
+    constructor(
+        componentContext: ComponentContext,
+        storeFactory: StoreFactory
+    ) : this(
+        componentContext = componentContext,
+        bottomNavScreenComponentLambda = {
+            DefaultBottomNavScreenComponent(
+                componentContext = componentContext,
+                storeFactory = storeFactory
+            )
+        }
+    )
 
     private val rootNavigation: StackNavigation<ConfigRoot> = StackNavigation()
 
@@ -58,14 +73,14 @@ class DefaultRootComponent(
     ): RootComponent.ChildRoot {
         return when (config) {
             is ConfigRootBottomNavScreen -> RootComponent.ChildRoot.BottomNavScreenChildRoot(
-                component = bottomNavScreenComponent(componentContext)
+                component = bottomNavScreenComponentLambda(componentContext)
             )
         }
     }
 
-    private fun bottomNavScreenComponent(componentContext: ComponentContext): BottomNavScreenComponent {
-        return DefaultBottomNavScreenComponent(componentContext = componentContext)
-    }
+//    private fun bottomNavScreenComponent(componentContext: ComponentContext): BottomNavScreenComponent {
+//        return DefaultBottomNavScreenComponent(componentContext = componentContext)
+//    }
 
 
     @Serializable

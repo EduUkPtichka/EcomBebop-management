@@ -32,16 +32,14 @@ fun CardAddProduct(
                 width = Dp.Hairline,
                 color = colorResource(MR.colors.black),
                 shape = RoundedCornerShape(8.dp)
-            )
-        ,
+            ),
         contentAlignment = Alignment.Center
     ) {
         Icon(
             painter = painterResource(MR.images.svg_plus),
             contentDescription = null,
             modifier = Modifier
-                .size(40.dp)
-            ,
+                .size(40.dp),
             tint = colorResource(MR.colors.black).copy(alpha = 0.1f)
         )
     }

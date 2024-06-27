@@ -17,4 +17,5 @@ interface RootComponent {
     sealed class ChildRoot {
         class BottomNavScreenChildRoot(val component: BottomNavScreenComponent) : ChildRoot()
     }
+
 }

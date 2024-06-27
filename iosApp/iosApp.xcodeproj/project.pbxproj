@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
+		0D3672212C2DF2FB0019E781 /* ComposeViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3672202C2DF2FB0019E781 /* ComposeViewControllerToSwiftUI.swift */; };
+		0D3672232C2DF3B60019E781 /* LifecycleHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3672222C2DF3B60019E781 /* LifecycleHolder.swift */; };
 		0D64FA092C19AB1500D2C942 /* RootViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA082C19AB1500D2C942 /* RootViewScreen.swift */; };
 		0D64FA0B2C19AD9100D2C942 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA0A2C19AD9100D2C942 /* StackView.swift */; };
 		0D64FA0F2C19AF1300D2C942 /* StateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64FA0E2C19AF1300D2C942 /* StateValue.swift */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0D3672202C2DF2FB0019E781 /* ComposeViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
+		0D3672222C2DF3B60019E781 /* LifecycleHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleHolder.swift; sourceTree = "<group>"; };
 		0D64FA082C19AB1500D2C942 /* RootViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewScreen.swift; sourceTree = "<group>"; };
 		0D64FA0A2C19AD9100D2C942 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		0D64FA0E2C19AF1300D2C942 /* StateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValue.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				0D64FA172C19BAF700D2C942 /* AppDelegate.swift */,
 				0D64FA192C19BBD700D2C942 /* RootHolder.swift */,
 				0D64FA1B2C19BC5D00D2C942 /* RootView.swift */,
+				0D3672202C2DF2FB0019E781 /* ComposeViewControllerToSwiftUI.swift */,
+				0D3672222C2DF3B60019E781 /* LifecycleHolder.swift */,
 			);
 			path = root_decompose_ios;
 			sourceTree = "<group>";
@@ -267,9 +273,11 @@
 			files = (
 				0D64FA182C19BAF700D2C942 /* AppDelegate.swift in Sources */,
 				0D64FA092C19AB1500D2C942 /* RootViewScreen.swift in Sources */,
+				0D3672212C2DF2FB0019E781 /* ComposeViewControllerToSwiftUI.swift in Sources */,
 				0D64FA0F2C19AF1300D2C942 /* StateValue.swift in Sources */,
 				0D64FA132C19AF8100D2C942 /* ObservableValue.swift in Sources */,
 				0D64FA1C2C19BC5D00D2C942 /* RootView.swift in Sources */,
+				0D3672232C2DF3B60019E781 /* LifecycleHolder.swift in Sources */,
 				0D64FA152C19AF9B00D2C942 /* MutableValue.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				0D64FA112C19AF5E00D2C942 /* SimpleChildStack.swift in Sources */,

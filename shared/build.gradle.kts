@@ -35,6 +35,12 @@ kotlin {
             export(libs.arkivanov.essenty.lifecycle)
             export(libs.arkivanov.essenty.stateKeeper)
 
+            export(libs.arkivanov.mvikotlin)
+            export(libs.arkivanov.mvikotlinMain)
+            export(libs.arkivanov.mvikotlinExtensionsCoroutines)
+            export(libs.arkivanov.mvikotlinLogger)
+            export(libs.arkivanov.mvikotlinTimetravel)
+
             export(libs.moko.resources)
             export(libs.moko.graphics)
 

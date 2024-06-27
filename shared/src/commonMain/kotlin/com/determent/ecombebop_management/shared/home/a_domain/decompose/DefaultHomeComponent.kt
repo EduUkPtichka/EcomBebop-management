@@ -5,24 +5,25 @@ import com.arkivanov.decompose.childContext
 import com.arkivanov.essenty.lifecycle.LifecycleRegistry
 import com.arkivanov.essenty.lifecycle.resume
 import com.arkivanov.essenty.lifecycle.stop
-import com.determent.ecombebop_management.shared.home_content.list_product.domain.decompose.DefaultListProductComponent
-import com.determent.ecombebop_management.shared.home_content.list_product.domain.decompose.ListProductComponent
+import com.arkivanov.mvikotlin.core.store.StoreFactory
+import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.decompose.DefaultListProductComponent
 
 class DefaultHomeComponent(
-    componentContext: ComponentContext
+    componentContext: ComponentContext,
+    storeFactory: StoreFactory,
 ) : HomeComponent, ComponentContext by componentContext {
 
     private val counterLifecycle = LifecycleRegistry()
 
-    val listProductComponent: ListProductComponent =
-        DefaultListProductComponent(
-            componentContext = childContext(
-                key = "ListProductComponent",
-                lifecycle = counterLifecycle
-            )
-        )
+    override val childListProductComponent = DefaultListProductComponent(
+        componentContext = childContext(
+            key = "ListProductComponent",
+            lifecycle = counterLifecycle
+        ),
+        storeFactory = storeFactory
+    )
 
-    private fun resumeCounter() {
+    fun resumeCounter() {
         counterLifecycle.resume()
     }
 

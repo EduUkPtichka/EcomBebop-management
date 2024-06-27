@@ -6,6 +6,7 @@ import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.bringToFront
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
+import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.BottomNavScreenComponent.BottomNavScreenModel
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigCatalog
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigHome
@@ -24,8 +25,22 @@ import kotlinx.serialization.Serializable
 import org.example.library.MR
 
 class DefaultBottomNavScreenComponent(
-    componentContext: ComponentContext
+    componentContext: ComponentContext,
+    private val homeComponentLambda: (ComponentContext) -> DefaultHomeComponent,
 ) : BottomNavScreenComponent, ComponentContext by componentContext {
+
+    constructor(
+        componentContext: ComponentContext,
+        storeFactory: StoreFactory,
+    ) : this(
+        componentContext = componentContext,
+        homeComponentLambda = {
+            DefaultHomeComponent(
+                componentContext = componentContext,
+                storeFactory = storeFactory,
+            )
+        }
+    )
 
     override val model: StateFlow<List<BottomNavScreenModel>>
         get() = _model.asStateFlow()
@@ -75,7 +90,7 @@ class DefaultBottomNavScreenComponent(
     ): BottomNavScreenComponent.ChildBottomNavScreen {
         return when (config) {
             is ConfigHome -> BottomNavScreenComponent.ChildBottomNavScreen.HomeChildBottomNavScreen(
-                component = homeComponent(componentContext)
+                component = homeComponentLambda(componentContext)
             )
 
             is ConfigCatalog -> BottomNavScreenComponent.ChildBottomNavScreen.CatalogChildBottomNavScreen(
@@ -100,9 +115,9 @@ class DefaultBottomNavScreenComponent(
         navigationBottomNavScreen.bringToFront(ConfigMessenger)
     }
 
-    private fun homeComponent(componentContext: ComponentContext): HomeComponent {
-        return DefaultHomeComponent(componentContext = componentContext)
-    }
+//    private fun homeComponent(componentContext: ComponentContext): HomeComponent {
+//        return homeComponentLambda(componentContext)
+//    }
 
     private fun catalogComponent(componentContext: ComponentContext): CatalogComponent {
         return DefaultCatalogComponent(componentContext = componentContext)

@@ -11,13 +11,17 @@ import shared
 
 class RootHolder : ObservableObject {
     let lifecycle: LifecycleRegistry
+    let storeFactory: StoreFactory
     let root: RootComponent
 
     init() {
         lifecycle = LifecycleRegistryKt.LifecycleRegistry()
+        
+        storeFactory = DefaultStoreFactory()
 
         root = DefaultRootComponent(
-            componentContext: DefaultComponentContext(lifecycle: lifecycle)
+            componentContext: DefaultComponentContext(lifecycle: lifecycle),
+            storeFactory: storeFactory
         )
 
         LifecycleRegistryExtKt.create(lifecycle)
@@ -28,3 +32,4 @@ class RootHolder : ObservableObject {
         LifecycleRegistryExtKt.destroy(lifecycle)
     }
 }
+

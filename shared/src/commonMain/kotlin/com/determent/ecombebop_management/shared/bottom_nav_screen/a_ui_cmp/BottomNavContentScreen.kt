@@ -54,7 +54,6 @@ fun BottomNavContentScreen(
                     modifier = Modifier
                         .fillMaxSize()
                         .background(Color.Blue),
-                    listProductContent = {}
                 )
 
                 is BottomNavScreenComponent.ChildBottomNavScreen.CatalogChildBottomNavScreen -> CatalogContentScreen(
