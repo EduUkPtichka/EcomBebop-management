@@ -15,24 +15,40 @@ fun PreviewVerticalPagerGrid() {
     val items = listOf(
         ProductItem(
             mainImage = 1,
-            price = 11,
-            discount = 0.10,
-            priceCalculated = 0,
+            price = 11000,
+            discount = 0,
+            priceCalculated = 5400,
             title = "String",
             brand = "Brend"
         ),
         ProductItem(
             mainImage = 1,
-            price = 11,
-            discount = 0.10,
-            priceCalculated = 0,
+            price = 70000,
+            discount = 66,
+            priceCalculated = 3445,
             title = "Платье",
             brand = "Brend"
         ),
         ProductItem(
             mainImage = 1,
             price = 11,
-            discount = 0.10,
+            discount = 66,
+            priceCalculated = 0,
+            title = "Футболка",
+            brand = "Brend"
+        ),
+        ProductItem(
+            mainImage = 1,
+            price = 112124,
+            discount = 0,
+            priceCalculated = 0,
+            title = "Футболка",
+            brand = "Brend"
+        ),
+        ProductItem(
+            mainImage = 1,
+            price = 70000,
+            discount = 0,
             priceCalculated = 0,
             title = "Футболка",
             brand = "Brend"
@@ -43,7 +59,7 @@ fun PreviewVerticalPagerGrid() {
         modifier = Modifier
             .fillMaxSize()
     ) {
-        VerticalPagerGrid(items = items)
+        VerticalPagerGrid(items = items, onClickAddProduct = {})
     }
 
 }

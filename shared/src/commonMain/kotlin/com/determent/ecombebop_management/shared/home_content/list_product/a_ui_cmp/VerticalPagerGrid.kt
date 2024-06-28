@@ -25,7 +25,7 @@ fun VerticalPagerGrid(
             .fillMaxSize()
             .background(Color.White),
         contentPadding = PaddingValues(horizontal = 12.dp),
-        verticalArrangement = Arrangement.spacedBy(4.dp),
+        verticalArrangement = Arrangement.spacedBy(20.dp),
         horizontalArrangement = Arrangement.spacedBy(4.dp),
     ) {
 

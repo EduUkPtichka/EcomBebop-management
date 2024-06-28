@@ -3,7 +3,6 @@ package com.determent.ecombebop_management.shared.home_content.list_product.add_
 import androidx.compose.ui.graphics.Color
 import com.arkivanov.mvikotlin.core.store.Store
 import com.determent.ecombebop_management.shared.home_content.list_product.add_product.model.EnumClothesSize
-import com.determent.ecombebop_management.shared.home_content.list_product.add_product.model.ProductItemModel
 import com.determent.ecombebop_management.shared.home_content.list_product.add_product.store.AddProductStore.IntentAddProduct
 import com.determent.ecombebop_management.shared.home_content.list_product.add_product.store.AddProductStore.LabelAddProduct
 import com.determent.ecombebop_management.shared.home_content.list_product.add_product.store.AddProductStore.StateAddProduct
