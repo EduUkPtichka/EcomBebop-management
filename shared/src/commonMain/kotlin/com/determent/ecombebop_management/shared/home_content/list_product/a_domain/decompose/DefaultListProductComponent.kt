@@ -27,7 +27,7 @@ class DefaultListProductComponent(
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
-    override val model: StateFlow<ListProductStore.State>
+    override val model: StateFlow<ListProductStore.StateListProduct>
         get() = storeFactoryListProduct.stateFlow
 
     override fun onClickedAddProduct() {

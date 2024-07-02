@@ -3,6 +3,7 @@ package com.determent.ecombebop_management.shared.home_content.list_product.a_ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -11,6 +12,7 @@ import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -23,24 +25,39 @@ fun CardAddProduct(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Box(
+
+    Column(
         modifier = modifier
+            //.clip(RoundedCornerShape(8.dp))
             .background(Color.White)
-            .height(300.dp)
-            .fillMaxWidth()
-            .border(
-                width = Dp.Hairline,
-                color = colorResource(MR.colors.black),
-                shape = RoundedCornerShape(8.dp)
-            ),
-        contentAlignment = Alignment.Center
+            .height(360.dp)
+            .fillMaxWidth(),
     ) {
-        Icon(
-            painter = painterResource(MR.images.svg_plus),
-            contentDescription = null,
+        Box(
+            modifier = modifier
+                .clip(RoundedCornerShape(8.dp))
+                .border(width = Dp.Hairline, color = colorResource(MR.colors.black), shape = RoundedCornerShape(8.dp))
+                .weight(6.0f)
+                .fillMaxWidth(),
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(
+                painter = painterResource(MR.images.svg_plus),
+                contentDescription = null,
+                modifier = Modifier
+                    .size(68.dp),
+                tint = colorResource(MR.colors.black).copy(alpha = 0.4f)
+            )
+        }
+        Column(
             modifier = Modifier
-                .size(40.dp),
-            tint = colorResource(MR.colors.black).copy(alpha = 0.1f)
-        )
+                .clip(RoundedCornerShape(8.dp))
+                .background(Color.White)
+                .weight(1.4f)
+                .fillMaxWidth()
+        ) {
+
+        }
     }
+
 }

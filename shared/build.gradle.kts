@@ -1,15 +1,14 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     //alias(libs.plugins.google.ksp)
-
     alias(libs.plugins.jetbrains.kotlinMultiplatform)
     alias(libs.plugins.jetbrains.composeMultiplatform)
     alias(libs.plugins.jetbrains.kotlinCocoapods)
     alias(libs.plugins.jetbrains.kotlinPluginSerialization)
     alias(libs.plugins.touchlab.skiePlugin)
-
     alias(libs.plugins.icerock.mokoMobileMultiplatformResources)
 }
+
 kotlin {
     androidTarget {
         compilations.all {
@@ -107,25 +106,11 @@ dependencies {
 
     /* --------------------- AndroidMain --------------------- */
 
-    /* ------------ Compose Lib Android ------------  */
-    // Camera
-    "androidMainApi"(libs.androidx.camera.camera2)
-    "androidMainApi"(libs.androidx.camera.core)
-    "androidMainApi"(libs.androidx.camera.lifecycle)
-    "androidMainApi"(libs.androidx.camera.view)
-    "androidMainApi"(libs.androidx.camera.extensions)
-    "androidMainApi"(libs.androidx.lifecycleRuntimeKtx)
-    // ViewModel
-    "androidMainApi"(libs.androidx.lifecycleViewModelCompose)
-    // Permissions
-    "androidMainApi"(libs.accompanist.permissions)
-
-    /* ------------- Jetbrains ------------  */
     // Coroutines
     "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.core)
     "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.android)
-
-
+    // Ktor
+    "androidMainImplementation"(libs.ktor.client.okhttp)
 
     "androidMainImplementation"(libs.android.composeUiToolingPreview)
 

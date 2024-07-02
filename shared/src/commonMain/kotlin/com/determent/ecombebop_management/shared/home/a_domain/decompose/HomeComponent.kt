@@ -5,4 +5,6 @@ import com.determent.ecombebop_management.shared.home_content.list_product.a_dom
 interface HomeComponent {
 
     val childListProductComponent: ListProductComponent
+
+
 }

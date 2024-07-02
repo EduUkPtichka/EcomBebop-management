@@ -1,7 +1,6 @@
 package com.determent.ecombebop_management.shared.home_content.list_product.a_ui_cmp
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,11 +24,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.model.ProductItem
+import com.determent.ecombebop_management.shared.resource.MyTypography.SfProDisplayRegular
 import dev.icerock.moko.resources.compose.colorResource
 import org.example.library.MR
 
@@ -41,19 +40,17 @@ fun CardItemProduct(
 ) {
     Column(
         modifier = modifier
-            //.clip(RoundedCornerShape(8.dp))
-            .background(Color.White)
-            .height(360.dp)
-            .fillMaxWidth(),
+            .clip(RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp))
+            .background(colorResource(MR.colors.white))
+            .fillMaxWidth()
+            .height(310.dp),
     ) {
-
         Card(
             modifier = Modifier
-                .clip(RoundedCornerShape(8.dp))
-                .border(width = Dp.Hairline, color = colorResource(MR.colors.black), shape = RoundedCornerShape(8.dp))
                 .weight(6.0f)
                 .fillMaxWidth(),
-            shape = RoundedCornerShape(8.dp)
+            shape = RoundedCornerShape(8.dp),
+            backgroundColor = colorResource(MR.colors.gray500)
         ) {
             Box(
                 modifier = Modifier.fillMaxSize()
@@ -64,7 +61,7 @@ fun CardItemProduct(
                 )
 
                 if (itemProduct.discount > 0) {
-                    DiscountImageText(
+                    DiscountImage(
                         discount = itemProduct.discount,
                         modifier = Modifier.align(Alignment.BottomStart)
                     )
@@ -75,18 +72,17 @@ fun CardItemProduct(
 
         Column(
             modifier = Modifier
-                .clip(RoundedCornerShape(8.dp))
-                .background(Color.White)
                 .weight(1.4f)
                 .fillMaxWidth()
         ) {
             Row(
                 modifier = Modifier
                     .weight(0.4f)
+                    .padding(start = 8.dp)
                     .fillMaxWidth()
                     .fillMaxHeight(),
                 horizontalArrangement = Arrangement.Start,
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.Bottom
             ) {
                 if (itemProduct.discount == 0 || itemProduct.priceCalculated == 0) {
                     TextPrice(prise = itemProduct.price)
@@ -97,11 +93,12 @@ fun CardItemProduct(
 
             Column(
                 modifier = Modifier
-                    .weight(0.6f)
+                    .weight(0.7f)
+                    .padding(start = 8.dp)
                     .fillMaxWidth()
                     .fillMaxHeight(),
                 verticalArrangement = Arrangement.SpaceEvenly,
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.Start
             ) {
                 TextTitle(text = itemProduct.title)
                 TextBrand(text = itemProduct.brand)
@@ -111,22 +108,24 @@ fun CardItemProduct(
 }
 
 @Composable
-private fun DiscountImageText(discount: Int, modifier: Modifier) {
-    val transformation = "–${discount}%"
+private fun DiscountImage(discount: Int, modifier: Modifier) {
+    val transformation = "-${discount}%" // –
+
     Box(
         modifier = modifier
-            .clip(shape = RoundedCornerShape(topEnd = 6.dp))
-            .background(Color.Red)
+            .clip(shape = RoundedCornerShape(topEnd = 8.dp))
+            .background(colorResource(MR.colors.red200))
             .wrapContentSize()
-            .height(18.dp)
-            .width(38.dp),
+            .width(36.dp)
+            .height(16.dp),
         contentAlignment = Alignment.Center,
     ) {
         Text(
             text = transformation,
-            color = Color.White,
-            fontSize = 11.sp,
-            style = MaterialTheme.typography.caption
+            modifier = Modifier,
+            color = colorResource(MR.colors.white),
+            fontSize = 12.sp,
+            fontFamily = SfProDisplayRegular()
         )
     }
 }
@@ -142,7 +141,7 @@ private fun TextPrice(prise: Int, modifier: Modifier = Modifier) {
     )
     Spacer(Modifier.width(2.dp))
     Text(
-        text = "сом",
+        text = "с",
         modifier = Modifier.padding(start = 4.dp),
         color = Color.Black,
         style = MaterialTheme.typography.button
@@ -153,28 +152,28 @@ private fun TextPrice(prise: Int, modifier: Modifier = Modifier) {
 private fun TextPrisePlusCalculatePrice(prise: Int, priceCalculated: Int) {
     Text(
         text = priceCalculated.toString(),
-        modifier = Modifier.padding(start = 4.dp),
-        color = Color.Black,
+        modifier = Modifier,
+        color = colorResource(MR.colors.black),
+        fontSize = 10.sp,
+        fontFamily = SfProDisplayRegular(),
         textDecoration = TextDecoration.LineThrough,
-        style = MaterialTheme.typography.overline
+    )
+    Spacer(Modifier.width(4.dp))
+    Text(
+        text = prise.toString(),
+        color = colorResource(MR.colors.red200),
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Bold,
+        fontFamily = SfProDisplayRegular(),
     )
     Spacer(Modifier.width(2.dp))
     Text(
-        text = prise.toString(),
-        modifier = Modifier.padding(start = 4.dp),
-        color = Color.Red,
-        fontSize = 13.sp,
+        text = "с",
+        modifier = Modifier,
+        color = colorResource(MR.colors.red200),
+        fontSize = 14.sp,
         fontWeight = FontWeight.Bold,
-        style = MaterialTheme.typography.button
-    )
-    Spacer(Modifier.width(1.dp))
-    Text(
-        text = "сом",
-        modifier = Modifier.padding(start = 4.dp),
-        color = Color.Black,
-        fontSize = 13.sp,
-        fontWeight = FontWeight.Bold,
-        style = MaterialTheme.typography.button
+        fontFamily = SfProDisplayRegular()
     )
 
 }
@@ -183,9 +182,9 @@ private fun TextPrisePlusCalculatePrice(prise: Int, priceCalculated: Int) {
 private fun TextTitle(text: String, modifier: Modifier = Modifier) {
     Text(
         text = text,
-        modifier = modifier.fillMaxWidth().padding(start = 4.dp),
-        color = Color.Black,
-        style = MaterialTheme.typography.caption
+        color = colorResource(MR.colors.black),
+        fontSize = 14.sp,
+        fontFamily = SfProDisplayRegular()
     )
 }
 
@@ -193,8 +192,8 @@ private fun TextTitle(text: String, modifier: Modifier = Modifier) {
 private fun TextBrand(text: String, modifier: Modifier = Modifier) {
     Text(
         text = text,
-        modifier = modifier.fillMaxWidth().padding(start = 4.dp),
-        color = Color.Black,
-        style = MaterialTheme.typography.caption
+        color = colorResource(MR.colors.black),
+        fontSize = 14.sp,
+        fontFamily = SfProDisplayRegular()
     )
 }

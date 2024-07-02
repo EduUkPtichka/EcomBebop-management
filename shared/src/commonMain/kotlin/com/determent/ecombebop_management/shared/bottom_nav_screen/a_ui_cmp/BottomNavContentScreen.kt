@@ -51,9 +51,7 @@ fun BottomNavContentScreen(
             when (val childStackBottomNavScreen = it.instance) {
                 is BottomNavScreenComponent.ChildBottomNavScreen.HomeChildBottomNavScreen -> HomeContentScreen(
                     component = childStackBottomNavScreen.component,
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(Color.Blue),
+                    modifier = Modifier,
                 )
 
                 is BottomNavScreenComponent.ChildBottomNavScreen.CatalogChildBottomNavScreen -> CatalogContentScreen(

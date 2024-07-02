@@ -29,6 +29,14 @@ import org.example.library.MR
 /*
  * selectedItem - поднять в BottomNavScreenComponent как отдельный observable state .
  */
+
+/*
+    A
+   / \
+  A   B
+      / \
+     B   C
+ */
 @Composable
 fun BottomNav(
     listItems: List<BottomNavScreenComponent.BottomNavScreenModel>,

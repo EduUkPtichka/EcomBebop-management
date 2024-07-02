@@ -1,7 +1,9 @@
 package com.determent.ecombebop_management.shared.home_content.list_product.a_ui_cmp
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -22,10 +24,12 @@ fun ListProductContent(
 
     Column(
         modifier = modifier
-            .clip(RoundedCornerShape(20.dp)),
+            .clip(RoundedCornerShape(20.dp))
+            .fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         VerticalPagerGrid(
             items = model.listProduct,
             onClickAddProduct = component::onClickedAddProduct,
@@ -33,3 +37,4 @@ fun ListProductContent(
         )
     }
 }
+

@@ -9,76 +9,44 @@ class ProductItemRepositoryImpl : ProductItemRepository {
         return flowOf(
             listOf(
                 ProductItem(
-                    mainImage = 0x01,
-                    price = 100,
-                    discount = 10,
-                    priceCalculated = 0,
-                    title = "Product 1",
-                    brand = "Brand A"
+                    mainImage = 1,
+                    price = 11000,
+                    discount = 0,
+                    priceCalculated = 5400,
+                    title = "String",
+                    brand = "Brend"
                 ),
                 ProductItem(
-                    mainImage = 0x02,
-                    price = 200,
-                    discount = 20,
-                    priceCalculated = 0,
-                    title = "Product 2",
-                    brand = "Brand B"
+                    mainImage = 1,
+                    price = 70000,
+                    discount = 66,
+                    priceCalculated = 3445,
+                    title = "Платье",
+                    brand = "Brend"
                 ),
                 ProductItem(
-                    mainImage = 0x03,
-                    price = 300,
-                    discount = 30,
+                    mainImage = 1,
+                    price = 11,
+                    discount = 66,
                     priceCalculated = 0,
-                    title = "Product 3",
-                    brand = "Brand C"
+                    title = "Футболка",
+                    brand = "Brend"
                 ),
                 ProductItem(
-                    mainImage = 0x01,
-                    price = 100,
-                    discount = 10,
+                    mainImage = 1,
+                    price = 112124,
+                    discount = 0,
                     priceCalculated = 0,
-                    title = "Product 1",
-                    brand = "Brand A"
+                    title = "Футболка",
+                    brand = "Brend"
                 ),
                 ProductItem(
-                    mainImage = 0x01,
-                    price = 100,
-                    discount = 10,
+                    mainImage = 1,
+                    price = 70000,
+                    discount = 0,
                     priceCalculated = 0,
-                    title = "Product 1",
-                    brand = "Brand A"
-                ),
-                ProductItem(
-                    mainImage = 0x01,
-                    price = 100,
-                    discount = 10,
-                    priceCalculated = 0,
-                    title = "Product 1",
-                    brand = "Brand A"
-                ),
-                ProductItem(
-                    mainImage = 0x01,
-                    price = 100,
-                    discount = 10,
-                    priceCalculated = 0,
-                    title = "Product 1",
-                    brand = "Brand A"
-                ),
-                ProductItem(
-                    mainImage = 0x01,
-                    price = 100,
-                    discount = 10,
-                    priceCalculated = 0,
-                    title = "Product 1",
-                    brand = "Brand A"
-                ),
-                ProductItem(
-                    mainImage = 0x01,
-                    price = 100,
-                    discount = 10,
-                    priceCalculated = 0,
-                    title = "Product 1",
-                    brand = "Brand A"
+                    title = "Футболка",
+                    brand = "Brend"
                 ),
             )
         )

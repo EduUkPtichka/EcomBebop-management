@@ -16,6 +16,8 @@ fun RootContentScreen(component: RootComponent, modifier: Modifier = Modifier) {
     ) {
         when (val rootChildStack = it.instance) {
             is RootComponent.ChildRoot.BottomNavScreenChildRoot -> BottomNavContentScreen(component = rootChildStack.component)
+
+
         }
     }
 }

@@ -14,7 +14,7 @@ composePlugin = "1.6.10"
 kspPlugin = "1.9.23-1.0.19"
 
 skiePlugin = "0.8.0"
-mokoPlugin = "0.24.0-beta-5"
+mokoPlugin = "0.24.1"
 
 # ----------- Librari Version -----------
 
@@ -55,7 +55,7 @@ mvikotlin-extensionsCoroutines = "4.0.0"
 kodein-diV = "7.21.2"
 
 # Moko
-moko-resourcesV = "0.24.0-beta-5"
+moko-resourcesV = "0.24.1"
 moko-graphicsV = "0.9.0"
 
 # Touchlab
@@ -79,8 +79,8 @@ androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "
 androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "cameraCoreV" }
 
 # ViewModel
-androidx-lifecycleRuntimeKtx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtxV"}
-androidx-lifecycleViewModelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtxV"}
+androidx-lifecycleRuntimeKtx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtxV" }
+androidx-lifecycleViewModelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtxV" }
 
 
 # Compose Multiplatform
@@ -106,8 +106,6 @@ android-composeUiTooling = { module = "androidx.compose.ui:ui-tooling", version.
 android-composeUiToolingPreview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "android-composeV" }
 
 # Jetbrains
-jetbrains-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
-jetbrains-kotlinxCollectionsImmutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 
 # Jetbrains Coroutines
 jetbrains-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
@@ -115,11 +113,19 @@ jetbrains-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx
 jetbrains-kotlinx-coroutines-core-iosx64 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-iosx64", version.ref = "kotlinxCoroutinesCore" }
 jetbrains-kotlinx-coroutines-core-js = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-js", version.ref = "kotlinxCoroutinesCore" }
 
+# Serialisation
+jetbrains-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+
+# Jetbrains Immutable Collections
+jetbrains-kotlinxCollectionsImmutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
+
 # Jetbrains Ktor-Client
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor-client" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor-client" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor-client" }
-
+ktor-client-logging = { module = "io.ktor:ktor-clent-logging", version.ref = "ktor-client" }
+ktor-client-json = { module = "io.ktor:ktor-clent-json", version.ref = "ktor-client" }
+ktor-client-serialization = { module = "io.ktor:ktor-client-seserialization", version.ref = "ktor-client" }
 # Decompose
 arkivanov-decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decomposeV" }
 arkivanov-decompose-extensionsCompose = { module = "com.arkivanov.decompose:extensions-compose", version.ref = "decomposeV" }

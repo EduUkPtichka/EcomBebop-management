@@ -39,7 +39,7 @@ fun PreviewVerticalPagerGrid() {
         ),
         ProductItem(
             mainImage = 1,
-            price = 112124,
+            price = 11,
             discount = 0,
             priceCalculated = 0,
             title = "Футболка",
@@ -63,3 +63,4 @@ fun PreviewVerticalPagerGrid() {
     }
 
 }
+

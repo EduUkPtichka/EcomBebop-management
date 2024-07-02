@@ -11,7 +11,7 @@ import com.determent.ecombebop_management.shared.home_content.list_product.a_dom
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.IntentListProduct.IntentListProductClickedAddProduct
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.IntentListProduct.IntentListProductItemClickedProduct
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.LabelListProduct
-import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.State
+import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.StateListProduct
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -21,9 +21,9 @@ class ListProductStoreFactory(
 ) {
 
     fun create(): ListProductStore {
-        return object : ListProductStore, Store<IntentListProduct, State, LabelListProduct> by storeFactory.create(
+        return object : ListProductStore, Store<IntentListProduct, StateListProduct, LabelListProduct> by storeFactory.create(
             name = "ListProductItemStore",
-            initialState = State(),
+            initialState = StateListProduct(),
             bootstrapper = BootstrapperImpl(),
             executorFactory = ::ExecutorImpl,
             reducer = ReducerImpl
@@ -45,8 +45,7 @@ class ListProductStoreFactory(
         }
     }
 
-
-    private inner class ExecutorImpl : CoroutineExecutor<IntentListProduct, Action, State, Msg, LabelListProduct>(
+    private inner class ExecutorImpl : CoroutineExecutor<IntentListProduct, Action, StateListProduct, Msg, LabelListProduct>(
         mainContext = Dispatchers.Main
     ) {
         override fun executeAction(action: Action) {
@@ -73,8 +72,8 @@ class ListProductStoreFactory(
         data class ListProductLoaded(val listProduct: List<ProductItem>) : Msg
     }
 
-    private object ReducerImpl : Reducer<State, Msg> {
-        override fun State.reduce(msg: Msg): State {
+    private object ReducerImpl : Reducer<StateListProduct, Msg> {
+        override fun StateListProduct.reduce(msg: Msg): StateListProduct {
             return when (msg) {
                 is Msg.ListProductLoaded -> {
                     copy(listProduct = msg.listProduct)

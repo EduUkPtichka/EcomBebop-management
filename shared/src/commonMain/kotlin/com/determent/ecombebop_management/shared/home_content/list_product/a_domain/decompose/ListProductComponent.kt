@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.StateFlow
 
 interface ListProductComponent {
 
-    val model: StateFlow<ListProductStore.State>
+    val model: StateFlow<ListProductStore.StateListProduct>
 
     fun onClickedAddProduct()
     fun onClickedProductItem(indexItem: Long)

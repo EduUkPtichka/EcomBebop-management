@@ -4,14 +4,14 @@ import com.arkivanov.mvikotlin.core.store.Store
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.model.ProductItem
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.IntentListProduct
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.LabelListProduct
-import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.State
+import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.StateListProduct
 
-interface ListProductStore : Store<IntentListProduct, State, LabelListProduct> {
+interface ListProductStore : Store<IntentListProduct, StateListProduct, LabelListProduct> {
 
-    data class State(
+    data class StateListProduct(
         val listProduct: List<ProductItem> = emptyList(),
         val isLoading: Boolean = false,
-        val error: String? = null
+        val error: String = ""
     )
 
     sealed interface IntentListProduct {
