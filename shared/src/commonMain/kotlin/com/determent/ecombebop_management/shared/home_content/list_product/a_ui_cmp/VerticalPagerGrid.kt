@@ -7,23 +7,28 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.itemsIndexed
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.model.ProductItem
+import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.model.ProductItemModel
+import com.determent.ecombebop_management.shared.my_resource.MyTypography.SfProDisplayRegular
+import dev.icerock.moko.resources.compose.colorResource
+import dev.icerock.moko.resources.compose.stringResource
+import org.example.library.MR
 
 @Composable
 fun VerticalPagerGrid(
-    items: List<ProductItem>,
+    items: List<ProductItemModel>,
     onClickAddProduct: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -31,10 +36,10 @@ fun VerticalPagerGrid(
         columns = GridCells.Fixed(2),
         modifier = modifier
             .fillMaxSize()
-            .background(Color.White),
-        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 10.dp),
-        verticalArrangement = Arrangement.spacedBy(4.dp),
-        horizontalArrangement = Arrangement.spacedBy(4.dp),
+            .background(colorResource(MR.colors.white)),
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 14.dp),
+        verticalArrangement = Arrangement.spacedBy(6.dp),
+        horizontalArrangement = Arrangement.spacedBy(6.dp),
     ) {
 
         item(
@@ -50,7 +55,7 @@ fun VerticalPagerGrid(
         }
 
         itemsIndexed(items) { index, item ->
-            CardItemProduct(
+            CardProductItem(
                 onClick = { },
                 itemProduct = item
             )
@@ -66,14 +71,16 @@ private fun InfoForManager(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxWidth()
             .height(60.dp),
-        verticalArrangement = Arrangement.SpaceEvenly,
+        verticalArrangement = Arrangement.Bottom,
         horizontalAlignment = Alignment.Start
     ) {
         Text(
-            text = "Недавно добавленные",
-            color = Color.Black,
-            fontSize = 22.sp,
-            style = MaterialTheme.typography.subtitle1
+            text = stringResource(MR.strings.manager_add_list_relation),
+            modifier = Modifier.padding(bottom = 16.dp),
+            color = colorResource(MR.colors.black),
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            fontFamily = SfProDisplayRegular()
         )
     }
 }

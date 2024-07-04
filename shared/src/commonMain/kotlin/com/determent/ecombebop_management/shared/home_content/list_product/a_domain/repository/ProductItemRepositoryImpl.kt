@@ -1,14 +1,14 @@
 package com.determent.ecombebop_management.shared.home_content.list_product.a_domain.repository
 
-import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.model.ProductItem
+import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.model.ProductItemModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
 class ProductItemRepositoryImpl : ProductItemRepository {
-    override suspend fun getListProductItem(): Flow<List<ProductItem>> {
+    override suspend fun getListProductItem(): Flow<List<ProductItemModel>> {
         return flowOf(
             listOf(
-                ProductItem(
+                ProductItemModel(
                     mainImage = 1,
                     price = 11000,
                     discount = 0,
@@ -16,7 +16,7 @@ class ProductItemRepositoryImpl : ProductItemRepository {
                     title = "String",
                     brand = "Brend"
                 ),
-                ProductItem(
+                ProductItemModel(
                     mainImage = 1,
                     price = 70000,
                     discount = 66,
@@ -24,7 +24,7 @@ class ProductItemRepositoryImpl : ProductItemRepository {
                     title = "Платье",
                     brand = "Brend"
                 ),
-                ProductItem(
+                ProductItemModel(
                     mainImage = 1,
                     price = 11,
                     discount = 66,
@@ -32,7 +32,7 @@ class ProductItemRepositoryImpl : ProductItemRepository {
                     title = "Футболка",
                     brand = "Brend"
                 ),
-                ProductItem(
+                ProductItemModel(
                     mainImage = 1,
                     price = 112124,
                     discount = 0,
@@ -40,7 +40,7 @@ class ProductItemRepositoryImpl : ProductItemRepository {
                     title = "Футболка",
                     brand = "Brend"
                 ),
-                ProductItem(
+                ProductItemModel(
                     mainImage = 1,
                     price = 70000,
                     discount = 0,

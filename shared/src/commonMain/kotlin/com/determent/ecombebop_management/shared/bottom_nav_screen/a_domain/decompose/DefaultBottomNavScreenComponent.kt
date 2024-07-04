@@ -8,13 +8,15 @@ import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.BottomNavScreenComponent.BottomNavScreenModel
+import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigAddProduct
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigCatalog
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigHome
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigMessenger
+import com.determent.ecombebop_management.shared.home_content.add_product.domain.decompose.AddProductComponent
+import com.determent.ecombebop_management.shared.home_content.add_product.domain.decompose.DefaultAddProductComponent
 import com.determent.ecombebop_management.shared.catalog.a_domain.decompose.CatalogComponent
 import com.determent.ecombebop_management.shared.catalog.a_domain.decompose.DefaultCatalogComponent
 import com.determent.ecombebop_management.shared.home.a_domain.decompose.DefaultHomeComponent
-import com.determent.ecombebop_management.shared.home.a_domain.decompose.HomeComponent
 import com.determent.ecombebop_management.shared.messenger.a_domain.decompose.DefaultMessengerComponent
 import com.determent.ecombebop_management.shared.messenger.a_domain.decompose.MessengerComponent
 import dev.icerock.moko.resources.compose.painterResource
@@ -26,7 +28,7 @@ import org.example.library.MR
 
 class DefaultBottomNavScreenComponent(
     componentContext: ComponentContext,
-    private val homeComponentLambda: (ComponentContext) -> DefaultHomeComponent,
+    private val homeComponentLambda: (ComponentContext, () -> Unit) -> DefaultHomeComponent,
 ) : BottomNavScreenComponent, ComponentContext by componentContext {
 
     constructor(
@@ -34,13 +36,15 @@ class DefaultBottomNavScreenComponent(
         storeFactory: StoreFactory,
     ) : this(
         componentContext = componentContext,
-        homeComponentLambda = {
+        homeComponentLambda = { childContext, onAddProductClicked ->
             DefaultHomeComponent(
-                componentContext = componentContext,
+                componentContext = childContext,
                 storeFactory = storeFactory,
+                onAddProductClicked = { onAddProductClicked() }
             )
         }
     )
+
 
     override val model: StateFlow<List<BottomNavScreenModel>>
         get() = _model.asStateFlow()
@@ -90,15 +94,19 @@ class DefaultBottomNavScreenComponent(
     ): BottomNavScreenComponent.ChildBottomNavScreen {
         return when (config) {
             is ConfigHome -> BottomNavScreenComponent.ChildBottomNavScreen.HomeChildBottomNavScreen(
-                component = homeComponentLambda(componentContext)
+                component = homeComponentLambda(componentContext, ::onOpenAddProduct)
             )
 
             is ConfigCatalog -> BottomNavScreenComponent.ChildBottomNavScreen.CatalogChildBottomNavScreen(
                 component = catalogComponent(componentContext)
             )
 
-            ConfigMessenger -> BottomNavScreenComponent.ChildBottomNavScreen.MessengerChildBottomNavScreen(
+            is ConfigMessenger -> BottomNavScreenComponent.ChildBottomNavScreen.MessengerChildBottomNavScreen(
                 component = messengerComponent(componentContext)
+            )
+
+            is ConfigAddProduct -> BottomNavScreenComponent.ChildBottomNavScreen.AddProductChildBottomNavScreen(
+                component = addProductComponent(componentContext)
             )
         }
     }
@@ -115,9 +123,9 @@ class DefaultBottomNavScreenComponent(
         navigationBottomNavScreen.bringToFront(ConfigMessenger)
     }
 
-//    private fun homeComponent(componentContext: ComponentContext): HomeComponent {
-//        return homeComponentLambda(componentContext)
-//    }
+    private fun onOpenAddProduct() {
+        navigationBottomNavScreen.bringToFront(ConfigAddProduct)
+    }
 
     private fun catalogComponent(componentContext: ComponentContext): CatalogComponent {
         return DefaultCatalogComponent(componentContext = componentContext)
@@ -125,6 +133,10 @@ class DefaultBottomNavScreenComponent(
 
     private fun messengerComponent(componentContext: ComponentContext): MessengerComponent {
         return DefaultMessengerComponent(componentContext = componentContext)
+    }
+
+    private fun addProductComponent(componentContext: ComponentContext): AddProductComponent {
+        return DefaultAddProductComponent(componentContext = componentContext)
     }
 
     @Serializable
@@ -138,6 +150,9 @@ class DefaultBottomNavScreenComponent(
 
         @Serializable
         data object ConfigMessenger : ConfigBottomNavScreen
+
+        @Serializable
+        data object ConfigAddProduct : ConfigBottomNavScreen
     }
 
 }

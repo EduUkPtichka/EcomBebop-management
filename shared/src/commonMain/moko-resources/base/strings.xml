@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
+    <string name="manager_add_list_relation">Недавно добавленные</string>
+    <string name="manager_add_product_title">Добавление товара</string>
     <string name="relation_appearance_product">Главный внешний Вид</string>
 </resources>

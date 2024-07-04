@@ -7,6 +7,7 @@ import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.value.Value
 import com.determent.ecombebop_management.shared.catalog.a_domain.decompose.CatalogComponent
 import com.determent.ecombebop_management.shared.home.a_domain.decompose.HomeComponent
+import com.determent.ecombebop_management.shared.home_content.add_product.domain.decompose.AddProductComponent
 import com.determent.ecombebop_management.shared.messenger.a_domain.decompose.MessengerComponent
 import kotlinx.coroutines.flow.StateFlow
 
@@ -23,6 +24,7 @@ interface BottomNavScreenComponent {
         class HomeChildBottomNavScreen(val component: HomeComponent) : ChildBottomNavScreen()
         class CatalogChildBottomNavScreen(val component: CatalogComponent) : ChildBottomNavScreen()
         class MessengerChildBottomNavScreen(val component: MessengerComponent) : ChildBottomNavScreen()
+        class AddProductChildBottomNavScreen(val component: AddProductComponent) : ChildBottomNavScreen()
     }
 
     data class BottomNavScreenModel(

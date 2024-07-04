@@ -106,6 +106,14 @@ dependencies {
 
     /* --------------------- AndroidMain --------------------- */
 
+    "androidMainImplementation"(libs.androidx.activity.compose)
+    "androidMainImplementation"(libs.accompanist.permissions)
+
+    "androidMainImplementation"(libs.androidx.camera.core)
+    "androidMainImplementation"(libs.androidx.camera.camera2)
+    "androidMainImplementation"(libs.androidx.camera.lifecycle)
+    "androidMainImplementation"(libs.androidx.camera.view)
+
     // Coroutines
     "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.core)
     "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.android)

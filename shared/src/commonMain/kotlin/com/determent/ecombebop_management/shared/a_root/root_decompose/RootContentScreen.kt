@@ -6,6 +6,7 @@ import com.arkivanov.decompose.extensions.compose.stack.Children
 import com.arkivanov.decompose.extensions.compose.stack.animation.fade
 import com.arkivanov.decompose.extensions.compose.stack.animation.stackAnimation
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_ui_cmp.BottomNavContentScreen
+import com.determent.ecombebop_management.shared.home_content.add_product.ui_cmp.AddProductContent
 
 @Composable
 fun RootContentScreen(component: RootComponent, modifier: Modifier = Modifier) {
@@ -16,8 +17,6 @@ fun RootContentScreen(component: RootComponent, modifier: Modifier = Modifier) {
     ) {
         when (val rootChildStack = it.instance) {
             is RootComponent.ChildRoot.BottomNavScreenChildRoot -> BottomNavContentScreen(component = rootChildStack.component)
-
-
         }
     }
 }

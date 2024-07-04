@@ -16,6 +16,7 @@ import com.arkivanov.decompose.extensions.compose.stack.animation.stackAnimation
 import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.BottomNavScreenComponent
 import com.determent.ecombebop_management.shared.catalog.a_ui_cmp.CatalogContentScreen
 import com.determent.ecombebop_management.shared.home.a_ui_cmp.HomeContentScreen
+import com.determent.ecombebop_management.shared.home_content.add_product.ui_cmp.AddProductContent
 import com.determent.ecombebop_management.shared.messenger.a_ui_cmp.MessengerContentScreen
 
 /*
@@ -29,10 +30,6 @@ fun BottomNavContentScreen(
     component: BottomNavScreenComponent,
     modifier: Modifier = Modifier
 ) {
-
-    val a by remember {
-        mutableStateOf(component.model)
-    }
 
     val model by component.model.collectAsState()
 
@@ -66,6 +63,10 @@ fun BottomNavContentScreen(
                     modifier = Modifier
                         .fillMaxSize()
                         .background(Color.LightGray)
+                )
+
+                is BottomNavScreenComponent.ChildBottomNavScreen.AddProductChildBottomNavScreen -> AddProductContent(
+                    component = childStackBottomNavScreen.component
                 )
             }
         }

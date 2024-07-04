@@ -11,6 +11,7 @@ import com.determent.ecombebop_management.shared.home_content.list_product.a_dom
 class DefaultHomeComponent(
     componentContext: ComponentContext,
     storeFactory: StoreFactory,
+    private val onAddProductClicked: () -> Unit,
 ) : HomeComponent, ComponentContext by componentContext {
 
     private val counterLifecycle = LifecycleRegistry()
@@ -20,7 +21,8 @@ class DefaultHomeComponent(
             key = "ListProductComponent",
             lifecycle = counterLifecycle
         ),
-        storeFactory = storeFactory
+        storeFactory = storeFactory,
+        onAddProductClicked = { onAddProductClicked() }
     )
 
     fun resumeCounter() {

@@ -5,11 +5,9 @@ import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineBootstrapper
 import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineExecutor
-import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.model.ProductItem
+import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.model.ProductItemModel
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.repository.ProductItemRepository
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.IntentListProduct
-import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.IntentListProduct.IntentListProductClickedAddProduct
-import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.IntentListProduct.IntentListProductItemClickedProduct
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.LabelListProduct
 import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.store.ListProductStore.StateListProduct
 import kotlinx.coroutines.Dispatchers
@@ -31,7 +29,7 @@ class ListProductStoreFactory(
     }
 
     private sealed interface Action {
-        data class ListProductLoaded(val listProduct: List<ProductItem>) : Action
+        data class ListProductLoaded(val listProduct: List<ProductItemModel>) : Action
     }
 
     private inner class BootstrapperImpl : CoroutineBootstrapper<Action>() {
@@ -58,18 +56,15 @@ class ListProductStoreFactory(
 
         override fun executeIntent(intent: IntentListProduct) {
             when (intent) {
-                is IntentListProductClickedAddProduct -> {
-                    publish(LabelListProduct.CallbackOpenAddProductContent)
+                IntentListProduct.IntentClickedAddProduct -> {
+                    publish(LabelListProduct.LabelOpenAddProduct)
                 }
-
-                is IntentListProductItemClickedProduct -> TODO()
-
             }
         }
     }
 
     private sealed interface Msg {
-        data class ListProductLoaded(val listProduct: List<ProductItem>) : Msg
+        data class ListProductLoaded(val listProduct: List<ProductItemModel>) : Msg
     }
 
     private object ReducerImpl : Reducer<StateListProduct, Msg> {
