@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.androidLibrary)
-    //alias(libs.plugins.google.ksp)
     alias(libs.plugins.jetbrains.kotlinMultiplatform)
     alias(libs.plugins.jetbrains.composeMultiplatform)
     alias(libs.plugins.jetbrains.kotlinCocoapods)
@@ -30,58 +29,55 @@ kotlin {
         framework {
             baseName = "shared"
 
+            // Decompose
             export(libs.arkivanov.decompose)
             export(libs.arkivanov.essenty.lifecycle)
             export(libs.arkivanov.essenty.stateKeeper)
 
+            // MVI
             export(libs.arkivanov.mvikotlin)
             export(libs.arkivanov.mvikotlinMain)
             export(libs.arkivanov.mvikotlinExtensionsCoroutines)
             export(libs.arkivanov.mvikotlinLogger)
             export(libs.arkivanov.mvikotlinTimetravel)
 
+            // Ktor
+            export(libs.ktor.client.darwin)
+
+            // Resource
             export(libs.moko.resources)
             export(libs.moko.graphics)
 
         }
     }
-
-    sourceSets {
-        iosMain.dependencies {
-            implementation(libs.ktor.client.darwin)
-        }
-    }
 }
 
 dependencies {
-    /* ------- Compose multiplatform -------  */
+
     // Compose Multiplatform
     commonMainImplementation(libs.jetbrains.composeRuntime)
     commonMainImplementation(libs.jetbrains.composeFoundation)
     commonMainImplementation(libs.jetbrains.composeMaterial)
     commonMainImplementation(libs.jetbrains.composeUi)
 
-    /* ------------ Compose Lib Multiplatform ------------  */
-    // Haze
-    commonMainImplementation(libs.chrisbanes.hazeJetpackCompose)
-    commonMainImplementation(libs.chrisbanes.hazeMaterials)
     // Coil
-    commonMainImplementation(libs.coil.compose)
-    commonMainImplementation(libs.coil.compose.core)
-    commonMainImplementation(libs.coil.network.ktor)
-    commonMainImplementation(libs.coil.mp)
+    commonMainApi(libs.coil.compose)
+    commonMainApi(libs.coil.compose.core)
+    commonMainApi(libs.coil.network.ktor)
+    commonMainApi(libs.coil.mp)
 
-    /* ------------- Jetbrains ------------  */
     // Coroutines
     commonMainApi(libs.jetbrains.kotlinx.coroutines.core)
 
-    commonMainImplementation(libs.jetbrains.kotlinxCollectionsImmutable)
-    commonMainImplementation(libs.jetbrains.kotlinx.serialization.json)
+    // Collection Immutable
+    commonMainApi(libs.jetbrains.kotlinxCollectionsImmutable)
+
+    // KotlinX Json
+    commonMainApi(libs.jetbrains.kotlinx.serialization.json)
 
     // Jetbrains Ktor-Client
     commonMainImplementation(libs.ktor.client.core)
 
-    /* ------------- Arkivanov ------------ */
     // Decompose
     commonMainApi(libs.arkivanov.decompose)
     commonMainApi(libs.arkivanov.decompose.extensionsCompose)
@@ -93,35 +89,38 @@ dependencies {
     commonMainApi(libs.arkivanov.mvikotlinLogger)
     commonMainApi(libs.arkivanov.mvikotlinTimetravel)
 
-    // Kodein (DI)
-    commonMainImplementation(libs.kodein.di)
+    // Koin
+    commonMainApi(libs.koin.core)
+    commonMainApi(libs.koin.compose)
 
-    /* --------- Инфраструктурные -------- */
     // Touchlab
     commonMainImplementation(libs.touchlab.skie.configurationAnnotations)
 
-    // Mako
+    // Moko
     commonMainApi(libs.moko.resources)
     commonMainApi(libs.moko.resourcesCompose)
 
     /* --------------------- AndroidMain --------------------- */
 
     "androidMainImplementation"(libs.androidx.activity.compose)
-    "androidMainImplementation"(libs.accompanist.permissions)
+    "androidMainApi"(libs.accompanist.permissions)
 
-    "androidMainImplementation"(libs.androidx.camera.core)
-    "androidMainImplementation"(libs.androidx.camera.camera2)
-    "androidMainImplementation"(libs.androidx.camera.lifecycle)
-    "androidMainImplementation"(libs.androidx.camera.view)
+    "androidMainApi"(libs.androidx.camera.core)
+    "androidMainApi"(libs.androidx.camera.camera2)
+    "androidMainApi"(libs.androidx.camera.lifecycle)
+    "androidMainApi"(libs.androidx.camera.view)
 
     // Coroutines
-    "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.core)
-    "androidMainImplementation"(libs.jetbrains.kotlinx.coroutines.android)
+    "androidMainApi"(libs.jetbrains.kotlinx.coroutines.core)
+    "androidMainApi"(libs.jetbrains.kotlinx.coroutines.android)
+
     // Ktor
-    "androidMainImplementation"(libs.ktor.client.okhttp)
+    "androidMainApi"(libs.ktor.client.okhttp)
+
+    // Koin
+    "androidMainApi"(libs.koin.android)
 
     "androidMainImplementation"(libs.android.composeUiToolingPreview)
-
 }
 
 android {

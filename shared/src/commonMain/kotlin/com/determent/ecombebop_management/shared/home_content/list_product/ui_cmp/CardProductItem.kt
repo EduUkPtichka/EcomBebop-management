@@ -1,7 +1,6 @@
-package com.determent.ecombebop_management.shared.home_content.add_product.ui_cmp
+package com.determent.ecombebop_management.shared.home_content.list_product.ui_cmp
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,26 +24,23 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.determent.ecombebop_management.shared.home_content.add_product.model.ProductItemRelationItemModel
+import com.determent.ecombebop_management.shared.home_content.list_product.model.ProductItemModel
 import com.determent.ecombebop_management.shared.my_resource.MyTypography.SfProDisplayRegular
 import dev.icerock.moko.resources.compose.colorResource
 import org.example.library.MR
 
 @Composable
-fun CardProductItemRelation(
-    itemProduct: ProductItemRelationItemModel,
+fun CardProductItem(
     onClick: () -> Unit,
+    itemProduct: ProductItemModel,
     modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier
             .clip(RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp))
             .background(colorResource(MR.colors.white))
-            .width(168.dp)
-            .height(310.dp)
-            .clickable {
-                onClick()
-            },
+            .fillMaxWidth()
+            .height(310.dp),
     ) {
         Card(
             modifier = Modifier
@@ -195,10 +191,3 @@ private fun TextBrand(text: String, modifier: Modifier = Modifier) {
         fontFamily = SfProDisplayRegular()
     )
 }
-
-
-
-
-
-
-

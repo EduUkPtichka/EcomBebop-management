@@ -5,8 +5,7 @@ import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.extensions.compose.stack.Children
 import com.arkivanov.decompose.extensions.compose.stack.animation.fade
 import com.arkivanov.decompose.extensions.compose.stack.animation.stackAnimation
-import com.determent.ecombebop_management.shared.bottom_nav_screen.a_ui_cmp.BottomNavContentScreen
-import com.determent.ecombebop_management.shared.home_content.add_product.ui_cmp.AddProductContent
+import com.determent.ecombebop_management.shared.bottom_nav_screen.ui_cmp.BottomNavContentScreen
 
 @Composable
 fun RootContentScreen(component: RootComponent, modifier: Modifier = Modifier) {

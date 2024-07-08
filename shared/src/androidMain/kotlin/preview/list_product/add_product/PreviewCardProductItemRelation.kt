@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.determent.ecombebop_management.shared.home_content.add_product.domain.model.ProductItemRelationItemModel
+import com.determent.ecombebop_management.shared.home_content.add_product.model.ProductItemRelationItemModel
 import com.determent.ecombebop_management.shared.home_content.add_product.ui_cmp.CardProductItemRelation
 
 @Preview

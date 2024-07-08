@@ -7,7 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.defaultComponentContext
 import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
-import com.determent.ecombebop_management.shared.a_camera.camera_platform.ui.MainContent
+import com.determent.ecombebop_management.shared.a_camera.ui.CameraImageCapture
+import com.determent.ecombebop_management.shared.a_camera.bloc.DefaultCameraComponent
 import com.determent.ecombebop_management.shared.a_root.root_decompose.DefaultRootComponent
 import com.determent.ecombebop_management.shared.a_root.root_decompose.RootContentScreen
 
@@ -22,11 +23,17 @@ class MainActivity : ComponentActivity() {
         )
 
         setContent {
+
+//            val camera = DefaultCameraComponent(
+//                componentContext = defaultComponentContext(),
+//            )
+//
+//            CameraImageCapture(camera)
+
             RootContentScreen(
                 component = rootDecompose,
                 modifier = Modifier.fillMaxSize()
             )
-            //MainContent(modifier = Modifier.fillMaxSize())
         }
     }
 }

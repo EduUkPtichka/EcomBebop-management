@@ -11,7 +11,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.determent.ecombebop_management.shared.home_content.add_product.domain.decompose.AddProductComponent
+import com.determent.ecombebop_management.shared.home_content.add_product.bloc.AddProductComponent
 import com.determent.ecombebop_management.shared.my_material.MyColumnCenter
 import com.determent.ecombebop_management.shared.my_material.MyTopAppBar
 

@@ -7,9 +7,7 @@ import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.determent.ecombebop_management.shared.a_root.root_decompose.DefaultRootComponent.ConfigRoot.ConfigRootBottomNavScreen
-import com.determent.ecombebop_management.shared.bottom_nav_screen.a_domain.decompose.DefaultBottomNavScreenComponent
-import com.determent.ecombebop_management.shared.home_content.add_product.domain.decompose.AddProductComponent
-import com.determent.ecombebop_management.shared.home_content.add_product.domain.decompose.DefaultAddProductComponent
+import com.determent.ecombebop_management.shared.bottom_nav_screen.bloc.DefaultBottomNavScreenComponent
 import kotlinx.serialization.Serializable
 
 /*
@@ -27,7 +25,6 @@ import kotlinx.serialization.Serializable
 class DefaultRootComponent(
     componentContext: ComponentContext,
     private val bottomNavScreenComponentLambda: (ComponentContext) -> DefaultBottomNavScreenComponent,
-    private val addProductComponentLambda: (ComponentContext) -> AddProductComponent
 ) : RootComponent, ComponentContext by componentContext {
 
     constructor(
@@ -41,11 +38,6 @@ class DefaultRootComponent(
                 storeFactory = storeFactory,
             )
         },
-        addProductComponentLambda = {
-            DefaultAddProductComponent(
-                componentContext = componentContext
-            )
-        }
     )
 
     private val rootNavigation: StackNavigation<ConfigRoot> = StackNavigation()

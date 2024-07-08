@@ -5,8 +5,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.determent.ecombebop_management.shared.home_content.list_product.a_ui_cmp.VerticalPagerGrid
-import com.determent.ecombebop_management.shared.home_content.list_product.a_domain.model.ProductItemModel
+import com.determent.ecombebop_management.shared.home_content.list_product.ui_cmp.VerticalPagerGrid
+import com.determent.ecombebop_management.shared.home_content.list_product.model.ProductItemModel
 
 @Preview
 @Composable
