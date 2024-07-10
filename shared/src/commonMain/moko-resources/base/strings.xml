@@ -3,4 +3,5 @@
     <string name="manager_add_list_relation">Недавно добавленные</string>
     <string name="manager_add_product_title">Добавление товара</string>
     <string name="relation_appearance_product">Главный внешний Вид</string>
+    <string name="camera_back_nav">Назад</string>
 </resources>

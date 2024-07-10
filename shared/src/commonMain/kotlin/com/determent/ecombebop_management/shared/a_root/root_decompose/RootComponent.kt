@@ -2,7 +2,7 @@ package com.determent.ecombebop_management.shared.a_root.root_decompose
 
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.value.Value
-import com.determent.ecombebop_management.shared.bottom_nav_screen.bloc.BottomNavScreenComponent
+import com.determent.ecombebop_management.shared.bottom_nav_screen.BottomNavScreenComponent
 
 /*
  *   Использовать практику "управление объектом":

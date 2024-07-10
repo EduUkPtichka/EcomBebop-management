@@ -20,7 +20,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
-import com.determent.ecombebop_management.shared.bottom_nav_screen.bloc.BottomNavScreenComponent
+import com.determent.ecombebop_management.shared.bottom_nav_screen.BottomNavScreenComponent
 import com.determent.ecombebop_management.shared.util_compose.noRippleClickable
 import dev.icerock.moko.resources.compose.colorResource
 import org.example.library.MR
@@ -28,14 +28,6 @@ import org.example.library.MR
 
 /*
  * selectedItem - поднять в BottomNavScreenComponent как отдельный observable state .
- */
-
-/*
-    A
-   / \
-  A   B
-      / \
-     B   C
  */
 @Composable
 fun BottomNav(

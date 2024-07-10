@@ -1,4 +1,4 @@
-package com.determent.ecombebop_management.shared.a_camera.specific_platform
+package com.determent.ecombebop_management.shared.camera_screen.specific_platform
 
 import androidx.compose.ui.graphics.ImageBitmap
 

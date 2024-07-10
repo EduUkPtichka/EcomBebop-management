@@ -1,4 +1,4 @@
-package com.determent.ecombebop_management.shared.bottom_nav_screen.bloc
+package com.determent.ecombebop_management.shared.bottom_nav_screen
 
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.router.stack.ChildStack
@@ -7,11 +7,11 @@ import com.arkivanov.decompose.router.stack.bringToFront
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.mvikotlin.core.store.StoreFactory
-import com.determent.ecombebop_management.shared.bottom_nav_screen.bloc.BottomNavScreenComponent.BottomNavScreenModel
-import com.determent.ecombebop_management.shared.bottom_nav_screen.bloc.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigAddProduct
-import com.determent.ecombebop_management.shared.bottom_nav_screen.bloc.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigCatalog
-import com.determent.ecombebop_management.shared.bottom_nav_screen.bloc.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigHome
-import com.determent.ecombebop_management.shared.bottom_nav_screen.bloc.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigMessenger
+import com.determent.ecombebop_management.shared.bottom_nav_screen.BottomNavScreenComponent.BottomNavScreenModel
+import com.determent.ecombebop_management.shared.bottom_nav_screen.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigAddProduct
+import com.determent.ecombebop_management.shared.bottom_nav_screen.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigCatalog
+import com.determent.ecombebop_management.shared.bottom_nav_screen.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigHome
+import com.determent.ecombebop_management.shared.bottom_nav_screen.DefaultBottomNavScreenComponent.ConfigBottomNavScreen.ConfigMessenger
 import com.determent.ecombebop_management.shared.home_content.add_product.bloc.AddProductComponent
 import com.determent.ecombebop_management.shared.home_content.add_product.bloc.DefaultAddProductComponent
 import com.determent.ecombebop_management.shared.catalog.bloc.CatalogComponent
@@ -69,10 +69,6 @@ class DefaultBottomNavScreenComponent(
             childFactory = ::childFactoryBottomNavScreen
         )
 
-
-    override val model: StateFlow<List<BottomNavScreenModel>>
-        get() = _model.asStateFlow()
-
     private val _model: MutableStateFlow<List<BottomNavScreenModel>> = MutableStateFlow(
         listOf(
             BottomNavScreenModel(
@@ -92,6 +88,10 @@ class DefaultBottomNavScreenComponent(
             ),
         )
     )
+
+    override val model: StateFlow<List<BottomNavScreenModel>>
+        get() = _model.asStateFlow()
+
 
     init {
 

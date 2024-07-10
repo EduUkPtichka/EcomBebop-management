@@ -3,37 +3,37 @@ package com.determent.ecombebop_management.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.defaultComponentContext
-import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
-import com.determent.ecombebop_management.shared.a_camera.ui.CameraImageCapture
-import com.determent.ecombebop_management.shared.a_camera.bloc.DefaultCameraComponent
-import com.determent.ecombebop_management.shared.a_root.root_decompose.DefaultRootComponent
-import com.determent.ecombebop_management.shared.a_root.root_decompose.RootContentScreen
+import com.determent.ecombebop_management.shared.camera.camera_screen.DefaultCameraScreenComponent
+import com.determent.ecombebop_management.shared.camera.camera_screen.presenter_cmp.CameraScreenContent
 
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val rootDecompose = DefaultRootComponent(
-            componentContext = defaultComponentContext(),
-            storeFactory = DefaultStoreFactory()
+//        val rootDecompose = DefaultRootComponent(
+//            componentContext = defaultComponentContext(),
+//            storeFactory = DefaultStoreFactory()
+//        )
+
+        val camera = DefaultCameraScreenComponent(
+            componentContext = defaultComponentContext()
         )
 
         setContent {
 
+            CameraScreenContent(component = camera)
+            
 //            val camera = DefaultCameraComponent(
 //                componentContext = defaultComponentContext(),
 //            )
-//
-//            CameraImageCapture(camera)
 
-            RootContentScreen(
-                component = rootDecompose,
-                modifier = Modifier.fillMaxSize()
-            )
+
+//            RootContentScreen(
+//                component = rootDecompose,
+//                modifier = Modifier.fillMaxSize()
+//            )
         }
     }
 }

@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import com.arkivanov.decompose.extensions.compose.stack.Children
 import com.arkivanov.decompose.extensions.compose.stack.animation.fade
 import com.arkivanov.decompose.extensions.compose.stack.animation.stackAnimation
-import com.determent.ecombebop_management.shared.bottom_nav_screen.bloc.BottomNavScreenComponent
+import com.determent.ecombebop_management.shared.bottom_nav_screen.BottomNavScreenComponent
 import com.determent.ecombebop_management.shared.catalog.ui_cmp.CatalogContentScreen
 import com.determent.ecombebop_management.shared.home.ui_cmp.HomeContentScreen
 import com.determent.ecombebop_management.shared.home_content.add_product.ui_cmp.AddProductContent

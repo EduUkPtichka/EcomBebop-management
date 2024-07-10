@@ -51,12 +51,12 @@ fun AddProductImageAndGallery() {
                         .size(50.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(
-                        painterResource(MR.images.svg_camera),
-                        contentDescription = null,
-                        modifier = Modifier.size(28.dp),
-                        tint = colorResource(MR.colors.white)
-                    )
+//                    Icon(
+//                        painterResource(MR.images.svg_camera),
+//                        contentDescription = null,
+//                        modifier = Modifier.size(28.dp),
+//                        tint = colorResource(MR.colors.white)
+//                    )
                 }
 
                 Box(

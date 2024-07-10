@@ -7,7 +7,7 @@ import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.determent.ecombebop_management.shared.a_root.root_decompose.DefaultRootComponent.ConfigRoot.ConfigRootBottomNavScreen
-import com.determent.ecombebop_management.shared.bottom_nav_screen.bloc.DefaultBottomNavScreenComponent
+import com.determent.ecombebop_management.shared.bottom_nav_screen.DefaultBottomNavScreenComponent
 import kotlinx.serialization.Serializable
 
 /*

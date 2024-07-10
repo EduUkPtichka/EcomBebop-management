@@ -1,4 +1,4 @@
-package com.determent.ecombebop_management.shared.bottom_nav_screen.bloc
+package com.determent.ecombebop_management.shared.bottom_nav_screen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.painter.Painter
