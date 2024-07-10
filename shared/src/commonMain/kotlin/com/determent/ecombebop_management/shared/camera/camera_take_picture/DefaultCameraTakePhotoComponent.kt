@@ -16,6 +16,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.serialization.Serializable
 
+
 class DefaultCameraTakePhotoComponent(
     componentContext: ComponentContext,
 ) : CameraTakePhotoComponent, ComponentContext by componentContext {
